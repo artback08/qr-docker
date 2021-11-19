@@ -7,6 +7,34 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Установка и настройка Laravel
+
+#### 1) Клонируем laravel с гитхаб
+git clone https://github.com/laravel/laravel.git .
+
+#### 2) Устанавливаем ядро ларавел
+composer install
+
+#### 3) Создаём и настраиваем файл .env
+copy .env.example .env
+
+#### 4) Устанавливаем sail
+composer require laravel/sail --dev 
+<br>
+php artisan sail:install
+
+#### 5) Заходим в контейнер для выполнения команд artisan
+docker exec -it <container_id> bash
+
+#### 6) Устанавливаем ключ приложения
+php artisan key:generate
+
+#### 7) Выполняем миграции из контейнера
+php artisan migrate
+
+#### 8) Засеиваем таблицы БД
+php artisan db:seed
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
@@ -30,24 +58,6 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 ## Laravel Sponsors
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
 
 ## Contributing
 

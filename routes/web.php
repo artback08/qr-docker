@@ -21,6 +21,7 @@ Route::name('user.')->group(function(){
 
     Route::view('/private', 'private')->middleware('auth')->name('private');
 
+
     Route::get('/login', function(){
         if(Auth::check()){
             return redirect(route('user.private'));
@@ -31,7 +32,10 @@ Route::name('user.')->group(function(){
     Route::post('/login', 'LoginController@login');
 
     Route::get('/registration', function(){
-       return view('registration');
+        if(Auth::check()){
+            return redirect(route('user.private'));
+        }
+        return view('registration');
     })->name('registration');
 
     Route::post('/registration', 'RegisterController@save');
